@@ -11,25 +11,25 @@ public class Cat extends Animal {
     @Override
     public void run(int distance) {
         if ((Math.abs(distance) - MAX_RUN_DISTANCE) % 10 == 1)
-            this.residualDistance = " метр.";
+            residualDistance = " метр.";
         else if ((Math.abs(distance) - MAX_RUN_DISTANCE) % 10 >= 2 && (Math.abs(distance) - MAX_RUN_DISTANCE) % 10 <= 4)
-            this.residualDistance = " метра.";
-        else this.residualDistance = " метров.";
+            residualDistance = " метра.";
+        else residualDistance = " метров.";
 
         if (Math.abs(distance) % 10 == 1)
-            this.totalDistance = " метр.";
+            totalDistance = " метр.";
         else if (Math.abs(distance) % 10 >= 2 && Math.abs(distance) % 10 <= 4)
-            this.totalDistance = " метра.";
-        else this.totalDistance = " метров.";
+            totalDistance = " метра.";
+        else totalDistance = " метров.";
 
         if (Math.abs(distance) > MAX_RUN_DISTANCE)
-            System.out.println(this.getName() + " устал и не добежал " + (Math.abs(distance) - MAX_RUN_DISTANCE) + this.residualDistance);
-        else System.out.println(this.getName() + " пробежал " + Math.abs(distance) + this.totalDistance);
+            System.out.println(getName() + " устал и не добежал " + (Math.abs(distance) - MAX_RUN_DISTANCE) + residualDistance);
+        else System.out.println(getName() + " пробежал " + Math.abs(distance) + totalDistance);
     }
 
     @Override
     public void swim(int distance) {
-        System.out.println(this.getName() + " не умеет плавать.");
+        System.out.println(getName() + " не умеет плавать.");
     }
 
     public static void addFood(int amountOfFood) {
@@ -37,8 +37,8 @@ public class Cat extends Animal {
     }
 
     public void eat() {
-        if (!this.fed && bowl >= MEAL) {
-            this.fed = true;
+        if (!fed && bowl >= MEAL) {
+            fed = true;
             bowl -= MEAL;
         }
     }
