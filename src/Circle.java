@@ -4,6 +4,16 @@ public class Circle implements Figure {
     private String outerColor;
     private String innerColor;
 
+    public Circle(double radius, String outerColor, String innerColor) {
+        this.radius = radius;
+        this.outerColor = outerColor;
+        this.innerColor = innerColor;
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     @Override
     public double perimeter() {
         return 2 * Math.PI * radius;
@@ -21,16 +31,6 @@ public class Circle implements Figure {
         if (innerColor == null)
             innerColor = "не задан";
         return "Длина окружности - " + String.format("%.3f", perimeter()) + "\nЕго площадь - " + String.format("%.3f", area()) + "\nЦвет границ - " + outerColor + "\nЦвет заливки - " + innerColor;
-    }
-
-    public Circle(double radius, String outerColor, String innerColor) {
-        this.radius = radius;
-        this.outerColor = outerColor;
-        this.innerColor = innerColor;
-    }
-
-    public Circle(double radius) {
-        this.radius = radius;
     }
 
     public double getRadius() {

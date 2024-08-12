@@ -6,6 +6,20 @@ public class Triangle implements Figure {
     private String outerColor;
     private String innerColor;
 
+    public Triangle(double sideA, double sideB, double angleDegrees, String outerColor, String innerColor) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.angleDegrees = angleDegrees;
+        this.outerColor = outerColor;
+        this.innerColor = innerColor;
+    }
+
+    public Triangle(double sideA, double sideB, double angleDegrees) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.angleDegrees = angleDegrees;
+    }
+
     @Override
     public double perimeter() {
         return sideA + sideB + Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2) - 2 * sideA * sideB * Math.cos(Math.toRadians(angleDegrees)));
@@ -23,20 +37,6 @@ public class Triangle implements Figure {
         if (innerColor == null)
             innerColor = "не задан";
         return "Периметр произвольного треугольника - " + String.format("%.3f", perimeter()) + "\nЕго площадь - " + String.format("%.3f", area()) + "\nЦвет границ - " + outerColor + "\nЦвет заливки - " + innerColor;
-    }
-
-    public Triangle(double sideA, double sideB, double angleDegrees, String outerColor, String innerColor) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.angleDegrees = angleDegrees;
-        this.outerColor = outerColor;
-        this.innerColor = innerColor;
-    }
-
-    public Triangle(double sideA, double sideB, double angleDegrees) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.angleDegrees = angleDegrees;
     }
 
     public double getSideA() {

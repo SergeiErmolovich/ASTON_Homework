@@ -5,6 +5,18 @@ public class Rectangle implements Figure {
     private String outerColor;
     private String innerColor;
 
+    public Rectangle(double sideA, double sideB, String outerColor, String innerColor) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.outerColor = outerColor;
+        this.innerColor = innerColor;
+    }
+
+    public Rectangle(double sideA, double sideB) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+    }
+
     @Override
     public double perimeter() {
         return sideA * 2 + sideB * 2;
@@ -22,18 +34,6 @@ public class Rectangle implements Figure {
         if (innerColor == null)
             innerColor = "не задан";
         return "Периметр прямоугольника - " + String.format("%.3f", perimeter()) + "\nЕго площадь - " + String.format("%.3f", area()) + "\nЦвет границ - " + outerColor + "\nЦвет заливки - " + innerColor;
-    }
-
-    public Rectangle(double sideA, double sideB, String outerColor, String innerColor) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.outerColor = outerColor;
-        this.innerColor = innerColor;
-    }
-
-    public Rectangle(double sideA, double sideB) {
-        this.sideA = sideA;
-        this.sideB = sideB;
     }
 
     public double getSideA() {

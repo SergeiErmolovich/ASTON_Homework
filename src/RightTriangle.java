@@ -5,6 +5,18 @@ public class RightTriangle implements Figure {
     private String outerColor;
     private String innerColor;
 
+    public RightTriangle(double sideA, double sideB, String outerColor, String innerColor) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.outerColor = outerColor;
+        this.innerColor = innerColor;
+    }
+
+    public RightTriangle(double sideA, double sideB) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+    }
+
     @Override
     public double perimeter() {
         return sideA + sideB + Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
@@ -22,18 +34,6 @@ public class RightTriangle implements Figure {
         if (innerColor == null)
             innerColor = "не задан";
         return "Периметр прямоугольного треугольника - " + String.format("%.3f", perimeter()) + "\nЕго площадь - " + String.format("%.3f", area()) + "\nЦвет границ - " + outerColor + "\nЦвет заливки - " + innerColor;
-    }
-
-    public RightTriangle(double sideA, double sideB, String outerColor, String innerColor) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.outerColor = outerColor;
-        this.innerColor = innerColor;
-    }
-
-    public RightTriangle(double sideA, double sideB) {
-        this.sideA = sideA;
-        this.sideB = sideB;
     }
 
     public double getSideA() {
