@@ -1,12 +1,16 @@
 public class Cat extends Animal {
-
+    private boolean fed;
+    private String totalDistance;
+    private String residualDistance;
     private static final int MAX_RUN_DISTANCE = 200;
     private static final int MEAL = 15;
     public static int count;
     public static int bowl;
-    private boolean fed;
-    private String totalDistance;
-    private String residualDistance;
+
+    public Cat(String name) {
+        super(name);
+        count++;
+    }
 
     @Override
     public void run(int distance) {
@@ -41,11 +45,6 @@ public class Cat extends Animal {
             fed = true;
             bowl -= MEAL;
         }
-    }
-
-    public Cat(String name) {
-        super(name);
-        count++;
     }
 
     public boolean isFed() {

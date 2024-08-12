@@ -1,10 +1,10 @@
 public class Dog extends Animal {
 
+    private String totalDistance;
+    private String residualDistance;
     private static final int MAX_RUN_DISTANCE = 500;
     private static final int MAX_SWIM_DISTANCE = 10;
     public static int count;
-    private String totalDistance;
-    private String residualDistance;
 
     public Dog(String name) {
         super(name);
